@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		353A39BE1FF63E7A0055157D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A39BD1FF63E7A0055157D /* AppDelegate.swift */; };
-		353A39C01FF63E7A0055157D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A39BF1FF63E7A0055157D /* ViewController.swift */; };
+		353A39C01FF63E7A0055157D /* SearchAlbumsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A39BF1FF63E7A0055157D /* SearchAlbumsVC.swift */; };
 		353A39C31FF63E7A0055157D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 353A39C11FF63E7A0055157D /* Main.storyboard */; };
 		353A39C51FF63E7A0055157D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 353A39C41FF63E7A0055157D /* Assets.xcassets */; };
 		353A39C81FF63E7A0055157D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 353A39C61FF63E7A0055157D /* LaunchScreen.storyboard */; };
+		35EE8F281FF64095008A5354 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EE8F271FF64095008A5354 /* DataService.swift */; };
+		35EE8F2A1FF64141008A5354 /* AlbumInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EE8F291FF64141008A5354 /* AlbumInfoVC.swift */; };
+		35EE8F2C1FF643B9008A5354 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EE8F2B1FF643B9008A5354 /* Constants.swift */; };
+		35EE8F2E1FF64957008A5354 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EE8F2D1FF64957008A5354 /* AlbumCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		353A39BA1FF63E7A0055157D /* ForaSoft-TestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ForaSoft-TestTask.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		353A39BD1FF63E7A0055157D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		353A39BF1FF63E7A0055157D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		353A39BF1FF63E7A0055157D /* SearchAlbumsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAlbumsVC.swift; sourceTree = "<group>"; };
 		353A39C21FF63E7A0055157D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		353A39C41FF63E7A0055157D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		353A39C71FF63E7A0055157D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		353A39C91FF63E7A0055157D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35EE8F271FF64095008A5354 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		35EE8F291FF64141008A5354 /* AlbumInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfoVC.swift; sourceTree = "<group>"; };
+		35EE8F2B1FF643B9008A5354 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		35EE8F2D1FF64957008A5354 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +62,50 @@
 		353A39BC1FF63E7A0055157D /* ForaSoft-TestTask */ = {
 			isa = PBXGroup;
 			children = (
+				35EE8F261FF6407B008A5354 /* Services */,
+				35EE8F251FF64060008A5354 /* Views */,
+				35EE8F241FF64044008A5354 /* Utilities */,
+				35EE8F231FF64012008A5354 /* Controllers */,
 				353A39BD1FF63E7A0055157D /* AppDelegate.swift */,
-				353A39BF1FF63E7A0055157D /* ViewController.swift */,
 				353A39C11FF63E7A0055157D /* Main.storyboard */,
 				353A39C41FF63E7A0055157D /* Assets.xcassets */,
 				353A39C61FF63E7A0055157D /* LaunchScreen.storyboard */,
 				353A39C91FF63E7A0055157D /* Info.plist */,
 			);
 			path = "ForaSoft-TestTask";
+			sourceTree = "<group>";
+		};
+		35EE8F231FF64012008A5354 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				353A39BF1FF63E7A0055157D /* SearchAlbumsVC.swift */,
+				35EE8F291FF64141008A5354 /* AlbumInfoVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		35EE8F241FF64044008A5354 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				35EE8F2B1FF643B9008A5354 /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		35EE8F251FF64060008A5354 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				35EE8F2D1FF64957008A5354 /* AlbumCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		35EE8F261FF6407B008A5354 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				35EE8F271FF64095008A5354 /* DataService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +180,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				353A39C01FF63E7A0055157D /* ViewController.swift in Sources */,
+				35EE8F2C1FF643B9008A5354 /* Constants.swift in Sources */,
+				35EE8F281FF64095008A5354 /* DataService.swift in Sources */,
+				353A39C01FF63E7A0055157D /* SearchAlbumsVC.swift in Sources */,
+				35EE8F2A1FF64141008A5354 /* AlbumInfoVC.swift in Sources */,
 				353A39BE1FF63E7A0055157D /* AppDelegate.swift in Sources */,
+				35EE8F2E1FF64957008A5354 /* AlbumCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
