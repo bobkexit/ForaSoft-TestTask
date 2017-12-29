@@ -71,7 +71,7 @@ class SearchAlbumsVC: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
+        searchBar.showsCancelButton = true
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -87,13 +87,12 @@ class SearchAlbumsVC: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
     }
     
-    
-    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        self.albums = []
-        self.albumCollectionView.reloadData()
+        view.endEditing(true)
+        searchBar.showsCancelButton = false
+        searchBar.text = ""
+        albums = []
+        albumCollectionView.reloadData()
     }
-    
-    
 }
 

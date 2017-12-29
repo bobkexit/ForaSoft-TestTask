@@ -12,9 +12,13 @@ import Alamofire
 class DataService {
     static let instance = DataService()
     
+    //get array of albums for specific search
     func getAlbums(forSearchText searchText: String, completionHandler: @escaping (_ albums: [Album]) -> ()) {
         
         let searchQuery = searchText.replacingOccurrences(of: " ", with: "+")
+        
+        //if I add pair "attribute": "allArtistTerm", I limit selection with only artist name
+        //should I? Because in task no words about artist
         let parameters: Parameters = ["term": searchQuery, "entity": "album"]
         
         request(SEARCH_URL, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
@@ -28,6 +32,7 @@ class DataService {
             guard let json = response.result.value as? Dictionary<String, Any> else { return }
             let albumsJson = json["results"] as! [Dictionary<String, Any>]
             for item in albumsJson {
+                //according to api docs artworkUrl100 is optinal
                 guard let artworkUrl100 = item["artworkUrl100"] as? String else {
                     continue
                 }
@@ -49,6 +54,7 @@ class DataService {
         
     }
     
+    //get array of songs for specific album id
     func getSongs(forAlbumId id: Int, completionHandler: @escaping (_ songs: [String]) -> ()) {
         let parameters: Parameters = ["id": id, "entity": "song"]
         request(LOOKUP_URL, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
