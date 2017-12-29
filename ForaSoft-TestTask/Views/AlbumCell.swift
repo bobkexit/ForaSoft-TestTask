@@ -7,15 +7,14 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class AlbumCell: UICollectionViewCell {
     
     //Outlets
     @IBOutlet weak var artworkImg: UIImageView!
     
-    func configureCell(album: Album) {
-        DataService.instance.getImage(byUrl: album.artworkUrl) { (image) in
-            self.artworkImg.image = image
-        }
+    func configureCell(url: URL) {
+        self.artworkImg.af_setImage(withURL: url)
     }
 }

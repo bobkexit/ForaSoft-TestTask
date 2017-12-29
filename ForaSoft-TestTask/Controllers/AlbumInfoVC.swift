@@ -7,29 +7,68 @@
 //
 
 import UIKit
+class AlbumInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-class AlbumInfoVC: UIViewController {
+    //Outlets
+    @IBOutlet weak var artworkImg: UIImageView!
+    @IBOutlet weak var albumNameLbl: UILabel!
+    @IBOutlet weak var artistNameLbl: UILabel!
+    @IBOutlet weak var countryLbl: UILabel!
+    @IBOutlet weak var genreLbl: UILabel!
+    @IBOutlet weak var releaseDateLbl: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
+    
+    //Variables
+    public private(set) var album: Album?
+    private var songs = [String]()
+    
+    func initData(album: Album) {
+        self.album = album
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        if let album = album {
+            albumNameLbl.text = album.albumName
+            artistNameLbl.text = album.artistName
+            countryLbl.text = album.country
+            genreLbl.text = album.primaryGenreName
+            releaseDateLbl.text = album.releaseDate.components(separatedBy: "-")[0] 
+            
+            let url = URL(string: album.artworkUrl100)!
+            artworkImg.af_setImage(withURL: url)
+            
+            spinner.isHidden = false
+            spinner.stopAnimating()
+            DataService.instance.getSongs(forAlbumId: album.albumId, completionHandler: { (retrievedSongs) in
+                self.songs = retrievedSongs;
+                self.tableView.reloadData()
+                self.spinner.stopAnimating()
+            })
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SONG_CELL, for: indexPath) as? SongCell else {
+            return UITableViewCell()
+        }
+        let trackName = songs[indexPath.row]
+        cell.configureCell(trackName: trackName)
+        return cell
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
-    */
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return songs.count
+    }
 
 }

@@ -8,7 +8,6 @@
 
 import Foundation
 import Alamofire
-import AlamofireImage
 
 class DataService {
     static let instance = DataService()
@@ -18,34 +17,57 @@ class DataService {
         let searchQuery = searchText.replacingOccurrences(of: " ", with: "+")
         let parameters: Parameters = ["term": searchQuery, "entity": "album"]
         
-        request(BASE_URL, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
-        
-            var albums = [Album]()
+        request(SEARCH_URL, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+            
             if let error = response.result.error {
-                debugPrint(error) //TODO: do something with error
-                completionHandler(albums)
+                debugPrint(error)
+                return
             }
+            
+            var albums = [Album]()
             guard let json = response.result.value as? Dictionary<String, Any> else { return }
             let albumsJson = json["results"] as! [Dictionary<String, Any>]
             for item in albumsJson {
-                let albumId = String(describing: item["collectionId"])
-                let artworkUrl = item["artworkUrl60"] as! String //TODO: catch error
-                let album = Album(albumId: albumId, artworkUrl: artworkUrl)
+                guard let artworkUrl100 = item["artworkUrl100"] as? String else {
+                    continue
+                }
+                
+                let albumId = item["collectionId"] as! Int
+                let artistName = item["artistName"] as! String
+                let albumName = item["collectionName"] as! String
+                let country = item["country"] as! String
+                let releaseDate = item["releaseDate"] as! String
+                let primaryGenreName = item["primaryGenreName"] as? String ?? ""
+                
+                let album = Album(albumId: albumId, artworkUrl100: artworkUrl100, artistName: artistName, albumName: albumName, country: country, releaseDate: releaseDate, primaryGenreName: primaryGenreName)
+                
                 albums.append(album)
             }
+            albums.sort{$0.albumName < $1.albumName}
             completionHandler(albums)
         }
         
     }
     
-    func getImage(byUrl url: String, completionHandler: @escaping (_ image: UIImage) -> ()) {
-        Alamofire.request(url).responseImage { (response) in
+    func getSongs(forAlbumId id: Int, completionHandler: @escaping (_ songs: [String]) -> ()) {
+        let parameters: Parameters = ["id": id, "entity": "song"]
+        request(LOOKUP_URL, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+            
             if let error = response.result.error {
-                debugPrint(error) //TODO: do something with error
-            } else {
-                guard let image = response.result.value else { return }
-                completionHandler(image)
+                debugPrint(error)
+                return
             }
+            
+            var songs = [String]()
+            guard let json = response.result.value as? Dictionary<String, Any> else { return }
+            let trackList = json["results"] as! [Dictionary<String, Any>]
+            for track in trackList {
+                guard let trackName = track["trackName"] as? String else {
+                    continue
+                }
+                songs.append(trackName)
+            }
+            completionHandler(songs)
         }
     }
 }
