@@ -53,6 +53,9 @@
                                             <constraint firstAttribute="bottom" secondItem="ySk-a2-1oD" secondAttribute="bottom" id="QF8-ao-eGg"/>
                                             <constraint firstAttribute="trailing" secondItem="ySk-a2-1oD" secondAttribute="trailing" id="sAE-5U-fC1"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="artworkImg" destination="ySk-a2-1oD" id="nlC-hY-ktv"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -69,6 +72,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="albumCollectionView" destination="yej-M8-CDE" id="iyT-2R-ZpM"/>
+                        <outlet property="searchBar" destination="2eh-pJ-bNn" id="zbs-nH-SSz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

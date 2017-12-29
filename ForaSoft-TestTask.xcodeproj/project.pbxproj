@@ -12,10 +12,12 @@
 		353A39C31FF63E7A0055157D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 353A39C11FF63E7A0055157D /* Main.storyboard */; };
 		353A39C51FF63E7A0055157D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 353A39C41FF63E7A0055157D /* Assets.xcassets */; };
 		353A39C81FF63E7A0055157D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 353A39C61FF63E7A0055157D /* LaunchScreen.storyboard */; };
+		359005471FF6528F0070A17E /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359005461FF6528F0070A17E /* Album.swift */; };
 		35EE8F281FF64095008A5354 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EE8F271FF64095008A5354 /* DataService.swift */; };
 		35EE8F2A1FF64141008A5354 /* AlbumInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EE8F291FF64141008A5354 /* AlbumInfoVC.swift */; };
 		35EE8F2C1FF643B9008A5354 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EE8F2B1FF643B9008A5354 /* Constants.swift */; };
 		35EE8F2E1FF64957008A5354 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EE8F2D1FF64957008A5354 /* AlbumCell.swift */; };
+		E97A23192E7512EE9709E47D /* Pods_ForaSoft_TestTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E87AFCA8CE9F5351117CC51F /* Pods_ForaSoft_TestTask.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,10 +28,14 @@
 		353A39C41FF63E7A0055157D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		353A39C71FF63E7A0055157D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		353A39C91FF63E7A0055157D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		359005461FF6528F0070A17E /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		35EE8F271FF64095008A5354 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		35EE8F291FF64141008A5354 /* AlbumInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfoVC.swift; sourceTree = "<group>"; };
 		35EE8F2B1FF643B9008A5354 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		35EE8F2D1FF64957008A5354 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
+		410D6A1E084ED16300DD133C /* Pods-ForaSoft-TestTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForaSoft-TestTask.release.xcconfig"; path = "Pods/Target Support Files/Pods-ForaSoft-TestTask/Pods-ForaSoft-TestTask.release.xcconfig"; sourceTree = "<group>"; };
+		50C1633BC8BCB9C40D9B4B74 /* Pods-ForaSoft-TestTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForaSoft-TestTask.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ForaSoft-TestTask/Pods-ForaSoft-TestTask.debug.xcconfig"; sourceTree = "<group>"; };
+		E87AFCA8CE9F5351117CC51F /* Pods_ForaSoft_TestTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ForaSoft_TestTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E97A23192E7512EE9709E47D /* Pods_ForaSoft_TestTask.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +55,8 @@
 			children = (
 				353A39BC1FF63E7A0055157D /* ForaSoft-TestTask */,
 				353A39BB1FF63E7A0055157D /* Products */,
+				F1FD0C45D415C975387370C2 /* Pods */,
+				3F613CFDB5068C1BC601CA56 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,8 +72,9 @@
 			isa = PBXGroup;
 			children = (
 				35EE8F261FF6407B008A5354 /* Services */,
-				35EE8F251FF64060008A5354 /* Views */,
 				35EE8F241FF64044008A5354 /* Utilities */,
+				359005451FF6524A0070A17E /* Models */,
+				35EE8F251FF64060008A5354 /* Views */,
 				35EE8F231FF64012008A5354 /* Controllers */,
 				353A39BD1FF63E7A0055157D /* AppDelegate.swift */,
 				353A39C11FF63E7A0055157D /* Main.storyboard */,
@@ -73,6 +83,14 @@
 				353A39C91FF63E7A0055157D /* Info.plist */,
 			);
 			path = "ForaSoft-TestTask";
+			sourceTree = "<group>";
+		};
+		359005451FF6524A0070A17E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				359005461FF6528F0070A17E /* Album.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		35EE8F231FF64012008A5354 /* Controllers */ = {
@@ -108,6 +126,23 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		3F613CFDB5068C1BC601CA56 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E87AFCA8CE9F5351117CC51F /* Pods_ForaSoft_TestTask.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F1FD0C45D415C975387370C2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				50C1633BC8BCB9C40D9B4B74 /* Pods-ForaSoft-TestTask.debug.xcconfig */,
+				410D6A1E084ED16300DD133C /* Pods-ForaSoft-TestTask.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -115,9 +150,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 353A39CC1FF63E7A0055157D /* Build configuration list for PBXNativeTarget "ForaSoft-TestTask" */;
 			buildPhases = (
+				9E9C7763DA164775418955E9 /* [CP] Check Pods Manifest.lock */,
 				353A39B61FF63E7A0055157D /* Sources */,
 				353A39B71FF63E7A0055157D /* Frameworks */,
 				353A39B81FF63E7A0055157D /* Resources */,
+				F101B9CD8989A1D66D236973 /* [CP] Embed Pods Frameworks */,
+				EB1CDF1ED14FE655600CD2FF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -175,6 +213,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9E9C7763DA164775418955E9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EB1CDF1ED14FE655600CD2FF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ForaSoft-TestTask/Pods-ForaSoft-TestTask-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F101B9CD8989A1D66D236973 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ForaSoft-TestTask/Pods-ForaSoft-TestTask-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		353A39B61FF63E7A0055157D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -185,6 +271,7 @@
 				353A39C01FF63E7A0055157D /* SearchAlbumsVC.swift in Sources */,
 				35EE8F2A1FF64141008A5354 /* AlbumInfoVC.swift in Sources */,
 				353A39BE1FF63E7A0055157D /* AppDelegate.swift in Sources */,
+				359005471FF6528F0070A17E /* Album.swift in Sources */,
 				35EE8F2E1FF64957008A5354 /* AlbumCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,6 +407,7 @@
 		};
 		353A39CD1FF63E7A0055157D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50C1633BC8BCB9C40D9B4B74 /* Pods-ForaSoft-TestTask.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -330,12 +418,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "BobKexit.ForaSoft-TestTask";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		353A39CE1FF63E7A0055157D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 410D6A1E084ED16300DD133C /* Pods-ForaSoft-TestTask.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -346,7 +435,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "BobKexit.ForaSoft-TestTask";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

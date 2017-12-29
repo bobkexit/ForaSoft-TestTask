@@ -10,4 +10,12 @@ import UIKit
 
 class AlbumCell: UICollectionViewCell {
     
+    //Outlets
+    @IBOutlet weak var artworkImg: UIImageView!
+    
+    func configureCell(album: Album) {
+        DataService.instance.getImage(byUrl: album.artworkUrl) { (image) in
+            self.artworkImg.image = image
+        }
+    }
 }

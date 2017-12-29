@@ -9,6 +9,8 @@
 import Foundation
 
 // URL Constants
+let BASE_URL = "https://itunes.apple.com/search"
+
 let SEARCH_URL = "https://itunes.apple.com/search?term="
 
 // Reuseable IDs
