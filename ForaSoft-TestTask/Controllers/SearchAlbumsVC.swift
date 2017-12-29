@@ -91,6 +91,7 @@ class SearchAlbumsVC: UIViewController, UICollectionViewDelegate, UICollectionVi
         view.endEditing(true)
         searchBar.showsCancelButton = false
         searchBar.text = ""
+        DataService.instance.cancelAllRequest()
         albums = []
         albumCollectionView.reloadData()
     }

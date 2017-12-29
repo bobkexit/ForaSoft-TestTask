@@ -76,4 +76,8 @@ class DataService {
             completionHandler(songs)
         }
     }
+    
+    func cancelAllRequest() {
+       SessionManager.default.session.getAllTasks{ $0.forEach{ $0.cancel() } }
+    }
 }
