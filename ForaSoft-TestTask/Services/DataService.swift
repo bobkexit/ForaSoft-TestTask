@@ -42,7 +42,7 @@ class DataService {
                 let albumName = item["collectionName"] as! String
                 let country = item["country"] as! String
                 let releaseDate = item["releaseDate"] as! String
-                let primaryGenreName = item["primaryGenreName"] as? String ?? ""
+                let primaryGenreName = item["primaryGenreName"] as? String //?? ""
                 
                 let album = Album(albumId: albumId, artworkUrl100: artworkUrl100, artistName: artistName, albumName: albumName, country: country, releaseDate: releaseDate, primaryGenreName: primaryGenreName)
                 

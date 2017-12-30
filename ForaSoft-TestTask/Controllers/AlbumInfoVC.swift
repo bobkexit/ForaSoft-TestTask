@@ -38,7 +38,8 @@ class AlbumInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
             albumNameLbl.text = album.albumName
             artistNameLbl.text = album.artistName
             countryLbl.text = album.country
-            genreLbl.text = album.primaryGenreName
+            
+            genreLbl.text = album.primaryGenreName ?? ""
             //dirty way to get year part, but more simple instead of convert to date and back to string
             releaseDateLbl.text = album.releaseDate.components(separatedBy: "-")[0] 
             

@@ -15,5 +15,5 @@ struct Album {
     public private(set) var albumName: String!
     public private(set) var country: String!
     public private(set) var releaseDate: String!
-    public private(set) var primaryGenreName: String!
+    public private(set) var primaryGenreName: String?
 }
