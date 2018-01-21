@@ -12,6 +12,10 @@ import Alamofire
 class DataService {
     static let instance = DataService()
     
+    private init() {
+        
+    }
+    
     //get array of albums for specific search
     func getAlbums(forSearchText searchText: String, completionHandler: @escaping (_ albums: [Album]) -> ()) {
         
