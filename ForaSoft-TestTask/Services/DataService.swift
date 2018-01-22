@@ -36,17 +36,17 @@ class DataService {
             guard let json = response.result.value as? Dictionary<String, Any> else { return }
             let albumsJson = json["results"] as! [Dictionary<String, Any>]
             for item in albumsJson {
-                //according to api docs artworkUrl100 is optinal
-                guard let artworkUrl100 = item["artworkUrl100"] as? String else {
+                guard
+                    let albumId = item["collectionId"] as? Int,
+                    let artistName = item["artistName"] as? String,
+                    let albumName = item["collectionName"] as? String,
+                    let country = item["country"] as? String,
+                    let releaseDate = item["releaseDate"] as? String,
+                    let primaryGenreName = item["primaryGenreName"] as? String,
+                    let artworkUrl100 = item["artworkUrl100"] as? String
+                else {
                     continue
                 }
-                
-                let albumId = item["collectionId"] as! Int
-                let artistName = item["artistName"] as! String
-                let albumName = item["collectionName"] as! String
-                let country = item["country"] as! String
-                let releaseDate = item["releaseDate"] as! String
-                let primaryGenreName = item["primaryGenreName"] as? String //?? ""
                 
                 let album = Album(albumId: albumId, artworkUrl100: artworkUrl100, artistName: artistName, albumName: albumName, country: country, releaseDate: releaseDate, primaryGenreName: primaryGenreName)
                 
